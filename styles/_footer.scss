@@ -1,0 +1,134 @@
+.c-footer {
+  width: 100%;
+  height: 370px;
+  color: $color6;
+  background-color: $color4;
+  padding: 78px 0 73px;
+  margin-top: 60px;
+  box-sizing: border-box;
+
+  &__right {
+    display: flex;
+    flex-grow: 1;
+
+    @include phones {
+      flex-direction: column;
+
+      .c-footer-item:last-of-type {
+        margin-top: 33px;
+      }
+    }
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: $fs3;
+      color: $color2;
+
+      @include phones {
+        margin-bottom: 16px;
+      }
+    }
+
+    &-logo {
+      max-width: 480px;
+      .c-footer__list-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 16px 0;
+        span {
+          margin-right: 10px;
+        }
+        .ic-steam-logo {
+          width: 80px;
+          height: 25px;
+        }
+        .ic-skinscash-logo {
+          width: 66px;
+          height: 21px;
+        }
+      }
+      @include phones {
+        display: none;
+      }
+
+      &--mob {
+        display: none;
+        @include phones {
+          display: flex;
+          width: 100%;
+          padding: 35px 0 25px;
+        }
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: $color6;
+    line-height: 2.4;
+    font-size: $fs3;
+    text-decoration: none;
+    &:hover {
+      color: $color2;
+      transition: $transition-default;
+    }
+  }
+
+  &__logo {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 18px;
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      @include desktops {
+        width: auto;
+      }
+    }
+
+    &-text {
+      font-size: $fs2;
+      color: $color8;
+    }
+  }
+
+  &__list {
+    &-item {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &-bottom-text {
+    width: 61%;
+    color: $color8;
+    font-size: $fs2;
+    margin: 0 0 0 auto;
+    p {
+      margin-bottom: 16px;
+    }
+  }
+
+  @include phones-landscape {
+    height: auto;
+    padding: 52px 0;
+    margin-top: 20px;
+
+    .l-container {
+      flex-wrap: wrap;
+    }
+
+    &-bottom-text {
+      width: 100%;
+    }
+  }
+}

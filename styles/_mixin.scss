@@ -1,0 +1,60 @@
+// Extra small devices (portrait phones, less than 576px)
+@mixin phones {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin phones-landscape {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin tablets {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin desktops {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin absolute($top:0, $right:0, $bottom:0, $left:0) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  margin: auto;
+}
+
+@mixin font-use ($fs, $weight, $ff:$font-base, $lh:$line-height-default){
+  font: $weight #{$fs}/#{$lh} $ff, sans-serif;
+}
+
+@keyframes btnCopyAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

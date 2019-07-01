@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap" rel="stylesheet">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none;">
+        <symbol id="ic-logo" width="110" height="32" viewBox="0 0 110 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M71.1413 5.62525L71.8823 2.93051L72.7581 0.370514H76.4634L73.0276 9.93683H69.7939L68.4465 6.3663L67.0991 9.93683H63.7981L60.3623 0.370514H64.0002L64.876 2.99788L65.617 5.69262L67.3013 0.437882H69.457L71.1413 5.62525Z" fill="white"/>
+            <path d="M86.5012 4.68211C86.5012 5.15369 86.4339 5.62527 86.3665 6.09685H79.7644C80.0339 6.90527 81.1118 7.30948 81.9202 7.30948C82.9307 7.30948 83.7391 7.04001 84.3454 6.56843L86.097 8.52211C84.9518 9.60001 83.4023 10.0716 81.7854 10.0716C78.8212 10.0716 76.2612 8.58948 76.2612 5.15369C76.2612 1.7179 78.956 0.168427 81.516 0.168427C84.3454 0.168427 86.5012 1.78527 86.5012 4.68211ZM81.4486 2.72843C80.6402 2.72843 79.7644 3.13264 79.697 3.87369H83.1328C83.1328 3.06527 82.3244 2.72843 81.4486 2.72843Z" fill="white"/>
+            <path d="M63.7307 31.8316V18.3579H66.897L67.0318 19.3684C67.8402 18.4253 69.0528 18.0884 70.1307 18.1558C72.8928 18.2905 74.4423 20.0421 74.4423 23.0737C74.4423 25.9705 72.6233 27.9916 69.8612 27.9916C68.6486 27.9916 67.7728 27.5874 67.2339 26.9811V31.7642H63.7307V31.8316ZM70.9391 23.1411C70.9391 21.7937 70.1307 21.0526 69.0528 21.0526C67.8402 21.0526 67.1665 22.0632 67.1665 23.0063C67.1665 24.1516 67.8402 25.2295 69.0528 25.2295C70.1307 25.2295 70.9391 24.4211 70.9391 23.1411Z" fill="#30C0F3"/>
+            <path d="M79.3601 27.8568H75.8569V14.3832H79.3601V27.8568Z" fill="#30C0F3"/>
+            <path d="M91.6212 18.3579V27.8568H88.3876L88.2528 26.8463C87.4444 27.7895 86.2318 28.1263 85.1539 28.0589C82.3244 27.9242 80.8423 25.9032 80.8423 23.1411C80.8423 20.3116 82.6612 18.1558 85.4233 18.1558C86.7707 18.1558 87.7139 18.6274 88.1854 19.3684L88.3876 18.3579H91.6212ZM84.2107 23.1411C84.2107 24.4884 85.0191 25.2295 86.097 25.2295C87.3097 25.2295 88.0507 24.2863 88.0507 23.1411C88.0507 21.8611 87.3097 21.0526 86.097 21.0526C85.0865 20.9853 84.2107 21.7937 84.2107 23.1411Z" fill="#30C0F3"/>
+            <path d="M98.6951 31.8316H94.9898L96.8762 27.3853L93.1035 18.2905H96.8762L97.6846 20.5811L98.6951 23.8821L99.8404 20.5811L100.716 18.3579H104.489L98.6951 31.8316Z" fill="#30C0F3"/>
+            <path d="M105.769 26.0379C105.769 25.0947 106.442 24.1516 107.79 24.1516C109.137 24.1516 109.811 25.0947 109.811 26.0379C109.811 26.9811 109.137 27.9242 107.79 27.9242C106.442 27.9242 105.769 26.9811 105.769 26.0379ZM105.971 14.3832H109.676L109.609 23.4105H106.038L105.971 14.3832Z" fill="#30C0F3"/>
+            <path d="M50.3915 22.0632C49.5157 21.1874 48.3705 20.6484 47.1578 20.4463C42.442 19.84 40.0841 18.7621 36.8505 15.4611C33.6168 12.2274 32.5389 10.0042 31.7978 5.28842C31.6631 4.00842 31.1241 2.72842 30.181 1.71789C27.8905 -0.572632 24.2526 -0.572632 21.962 1.71789C19.6715 4.00842 19.6715 7.64632 21.962 9.93684C22.9052 10.88 24.1178 11.4189 25.3978 11.5537H25.3305C30.1136 12.16 32.6736 13.6421 35.6378 16.6737C38.602 19.6379 40.2189 22.0632 40.6231 27.1158V27.0484C40.8252 28.1937 41.3641 29.3389 42.2399 30.2821C44.5305 32.5726 48.1684 32.5726 50.4589 30.2821C52.682 27.9916 52.682 24.3537 50.3915 22.0632Z" fill="#30C0F3"/>
+            <path d="M21.962 22.0632C19.6715 24.3537 19.6715 27.9916 21.962 30.2821C24.2526 32.5726 27.8905 32.5726 30.181 30.2821C32.4715 27.9916 32.4715 24.3537 30.181 22.0632C27.8905 19.7726 24.2526 19.7726 21.962 22.0632Z" fill="#30C0F3"/>
+            <path d="M5.79368 31.9663C8.99345 31.9663 11.5874 29.3724 11.5874 26.1726C11.5874 22.9729 8.99345 20.379 5.79368 20.379C2.59392 20.379 0 22.9729 0 26.1726C0 29.3724 2.59392 31.9663 5.79368 31.9663Z" fill="#30C0F3"/>
+        </symbol>
+        <symbol id="ic-media" viewBox="0 0 20 16" fill="none">
+            <path d="M10.0416 15.9994C10.1118 15.9994 10.155 16.0007 10.1984 15.9994C10.8514 15.9838 11.5047 15.9758 12.1574 15.9501C12.718 15.9275 13.2792 15.9022 13.8373 15.8469C14.517 15.7789 15.195 15.6914 15.8705 15.5867C16.6033 15.4732 17.3097 15.265 17.9903 14.9582C18.6223 14.6733 19.0455 14.2193 19.2917 13.5715C19.6225 12.7007 19.7907 11.7964 19.8799 10.8765C19.9394 10.2583 19.98 9.63708 19.9937 9.01675C20.0098 8.27173 19.991 7.52565 19.9819 6.77978C19.9714 5.92673 19.8997 5.0781 19.7648 4.23581C19.655 3.5545 19.4899 2.88902 19.2181 2.25097C18.9993 1.7372 18.6445 1.36395 18.1448 1.11244C17.3355 0.704378 16.4719 0.481988 15.5831 0.358767C14.8513 0.257278 14.1158 0.174568 13.3796 0.117177C12.602 0.0561995 11.8218 0.00914748 11.042 0.00218463C9.96675 -0.00773216 8.89092 0.0177982 7.81571 0.0448056C7.25914 0.0580984 6.70172 0.0912246 6.14788 0.146716C5.4762 0.214235 4.80599 0.302853 4.13894 0.405186C3.39326 0.51849 2.67477 0.729275 1.98601 1.04577C1.39908 1.31584 0.983753 1.73129 0.742992 2.33411C0.38185 3.23738 0.208553 4.18179 0.118742 5.14224C0.0616088 5.75287 0.0192331 6.36602 0.00616205 6.97854C-0.00964975 7.72356 0.00890276 8.46943 0.0179682 9.2153C0.0280877 10.0681 0.100611 10.9166 0.235328 11.7595C0.345167 12.4444 0.510875 13.1149 0.786421 13.7544C0.996402 14.2425 1.32444 14.6195 1.80533 14.8497C2.07392 14.9782 2.34568 15.1059 2.62586 15.2063C3.62917 15.5667 4.67907 15.6952 5.73109 15.8043C6.28049 15.861 6.83306 15.9022 7.38479 15.9258C8.20426 15.9615 9.02479 15.9758 9.84489 15.9994C9.87525 16.0005 9.9054 15.9948 9.94693 15.9902C9.93133 15.9524 9.92269 15.9222 9.90751 15.8956C9.60455 15.3713 9.29738 14.8493 8.99949 14.322C8.82008 14.0053 8.54727 13.8692 8.1952 13.853C7.80559 13.8353 7.41557 13.8201 7.02765 13.7827C6.22294 13.7298 5.61113 13.6812 4.74021 13.5392C4.26839 13.482 3.81659 13.3487 3.3922 13.1217C3.01926 12.9229 2.761 12.6376 2.6111 12.241C2.39606 11.6711 2.26957 11.0788 2.21876 10.4768C2.15361 9.70312 2.11187 8.92624 2.09817 8.15062C2.08215 7.23068 2.11503 6.30989 2.23267 5.39481C2.30541 4.82913 2.4123 4.27231 2.61785 3.73786C3.00872 2.89873 3.76705 2.67634 4.07021 2.60439C4.62489 2.47252 5.19243 2.38559 5.75891 2.31427C6.28724 2.24823 6.8202 2.21595 7.35232 2.18662C8.07186 2.14695 8.79183 2.11404 9.51221 2.09737C10.014 2.08534 10.5166 2.09526 11.0181 2.1153C11.8094 2.14611 12.6016 2.17565 13.3907 2.23895C14.0911 2.29528 14.7893 2.38686 15.4861 2.48054C16.816 2.64743 17.2465 3.21628 17.3989 3.62645C17.5117 3.93556 17.615 4.251 17.6892 4.57087C17.8579 5.30007 17.8944 6.04615 17.9005 6.79012C17.9104 7.98583 17.9424 9.18239 17.8396 10.377C17.7925 10.9174 17.7012 11.447 17.5541 11.9707C17.3863 12.5672 17.0401 12.9866 16.4639 13.2301C16.0929 13.3867 15.7109 13.4873 15.317 13.5397C14.6274 13.6584 13.2761 13.8017 11.8734 13.8511C11.4649 13.8694 11.1602 14.0237 10.958 14.3914C10.6852 14.8871 10.3945 15.373 10.112 15.8633C10.0907 15.8979 10.073 15.9368 10.0416 15.9994Z" fill="currentColor"/>
+        </symbol>
+        <symbol id="ic-target" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.10845 11.5597H1.62475C2.12178 15.2194 5.11746 18.1243 8.89151 18.6063V19.107C8.89151 19.7004 9.38789 20.1818 9.99996 20.1818C10.6121 20.1818 11.1084 19.7005 11.1084 19.107V18.6063C14.8825 18.1243 17.8781 15.2196 18.3751 11.5597H18.8915C19.5036 11.5597 19.9999 11.0784 19.9999 10.4848C19.9999 9.89128 19.5036 9.40995 18.8915 9.40995H18.3751C17.8781 5.75025 14.8824 2.84535 11.1084 2.36339V1.86273C11.1084 1.26921 10.6121 0.787872 9.99996 0.787872C9.38789 0.787872 8.89151 1.26921 8.89151 1.86273V2.36339C5.11746 2.84539 2.12178 5.75008 1.62475 9.40998H1.10845C0.496376 9.40998 1.98179e-09 9.89132 1.98179e-09 10.4848C-3.62219e-05 11.0784 0.49634 11.5597 1.10845 11.5597ZM8.89151 4.53808V7.50491C9.23799 7.38366 9.61023 7.314 9.99996 7.314C10.3897 7.314 10.7619 7.38366 11.1084 7.50491V4.53808C13.6583 4.98394 15.6728 6.93738 16.1326 9.40998H13.073C13.198 9.746 13.2699 10.1069 13.2699 10.4848C13.2699 10.8628 13.1981 11.2237 13.073 11.5597H16.1326C15.6728 14.0324 13.6582 15.9858 11.1084 16.4316V13.4648C10.7619 13.5861 10.3897 13.6557 9.99996 13.6557C9.61023 13.6557 9.23799 13.5861 8.89151 13.4648V16.4316C6.34164 15.9858 4.32712 14.0323 3.86733 11.5597H6.92687C6.80183 11.2238 6.73 10.8628 6.73 10.4848C6.73 10.107 6.80161 9.746 6.92687 9.40998H3.86733C4.32716 6.93738 6.34164 4.98394 8.89151 4.53808Z" fill="currentColor"/>
+            <path d="M9.99982 11.8284C10.765 11.8284 11.3854 11.2269 11.3854 10.4848C11.3854 9.74281 10.765 9.14127 9.99982 9.14127C9.2346 9.14127 8.61426 9.74281 8.61426 10.4848C8.61426 11.2269 9.2346 11.8284 9.99982 11.8284Z" fill="currentColor"/>
+        </symbol>
+        <symbol id="ic-controller" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.0922 6.96642C20.0353 2.12252 18.545 0.928295 17.6377 0.44938C16.1843 -0.317616 14.4995 0.128695 13.9406 0.417974C13.3059 0.744855 12.8775 1.36718 12.2324 1.63741C11.4869 1.94827 10.473 2.03259 9.71036 1.65712C9.10279 1.35735 8.56662 0.717146 7.8304 0.433994C6.89718 0.0738747 5.34287 -0.430884 3.80395 0.672219C3.44014 0.933224 0.84554 3.10862 0.066221 9.90448C-0.414525 14.0948 1.88277 15.4428 1.79844 15.3819C2.38939 15.8054 3.71287 16.5213 5.50603 15.3998C6.70455 14.6506 7.67713 13.1708 7.67713 13.1708C7.67713 13.1708 8.11049 12.3478 8.68605 11.9981C9.09356 11.75 9.70296 11.9384 9.70296 11.9384H11.8593C11.8593 11.9384 12.5438 11.8522 13.0246 12.0646C13.4912 12.2683 13.7547 12.7712 13.7547 12.7712C13.7547 12.7712 15.176 14.6081 16.5383 15.5444C17.1181 15.9421 19.4487 16.4001 20.6521 14.9301C21.4382 13.9679 21.9743 11.0101 21.0922 6.96642ZM9.57248 6.53739C9.57248 6.9055 9.28006 7.20344 8.91935 7.20344H7.28564V8.87102C7.28564 9.23977 6.99323 9.53827 6.63251 9.53827H6.14251C5.78179 9.53827 5.48941 9.24036 5.48941 8.87102V7.20344H3.85504C3.49432 7.20344 3.20191 6.9061 3.20191 6.53739V6.03756C3.20191 5.66882 3.49432 5.37028 3.85504 5.37028H5.48874V3.70454C5.48874 3.33642 5.78116 3.03725 6.14187 3.03725H6.63188C6.9926 3.03725 7.28501 3.33579 7.28501 3.70454V5.37088H8.91871C9.27943 5.37088 9.57184 5.66882 9.57184 6.03816V6.53739H9.57248ZM14.1739 8.87039C13.4973 8.87039 12.9489 8.31144 12.9489 7.62018C12.9489 6.93012 13.4973 6.37057 14.1739 6.37057C14.8504 6.37057 15.3988 6.92952 15.3988 7.62018C15.3994 8.31144 14.8503 8.87039 14.1739 8.87039ZM16.4201 6.09355C15.7509 6.09355 15.2086 5.54016 15.2086 4.85686C15.2086 4.17542 15.7509 3.62204 16.4201 3.62204C17.0892 3.62204 17.6315 4.17546 17.6315 4.85686C17.6315 5.54016 17.0892 6.09355 16.4201 6.09355Z" fill="currentColor"/>
+        </symbol>
+        <symbol id="ic-reload" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.93888 4.76247C9.87749 4.86344 9.90903 4.99292 10.0066 5.05179C10.0112 5.05414 10.0147 5.05699 10.017 5.05817L13.5251 7.18689L15.969 3.56342C16.0148 3.48996 16.0092 3.39537 15.9564 3.32794C15.9106 3.26052 15.8221 3.22865 15.7407 3.24978L13.9957 3.68687L13.9063 3.70934C12.5704 1.41423 10.1341 -2.23933e-09 7.46129 -2.23933e-09C3.34706 -2.23933e-09 0 3.3474 0 7.46095C0 11.5745 3.34706 14.9219 7.46129 14.9219C10.5605 14.9219 13.37 12.9716 14.4531 10.0684C14.6614 9.50934 14.3775 8.88592 13.8171 8.67711C13.2569 8.46812 12.6342 8.75275 12.4259 9.31294C11.6579 11.3748 9.66214 12.7598 7.46129 12.7598C4.53823 12.7598 2.16211 10.3828 2.16211 7.46146C2.16211 4.53974 4.53823 2.16295 7.46129 2.16295C9.14388 2.16295 10.6953 2.95325 11.6865 4.26819L10.1219 4.66133C10.0484 4.66033 9.97897 4.69672 9.93888 4.76247Z" fill="currentColor"/>
+        </symbol>
+        <symbol id="ic-question" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.00033 0C3.58334 0 0 3.57882 0 7.99611C0 12.4176 3.58334 16.0006 8.0003 16.0006C12.4197 16.0006 16 12.4176 16 7.99611C16 3.57882 12.4197 0 8.00033 0ZM8.57044 12.4477C8.38463 12.6131 8.16929 12.6962 7.92534 12.6962C7.67295 12.6962 7.45279 12.6145 7.26487 12.451C7.07665 12.2878 6.98236 12.0592 6.98236 11.7655C6.98236 11.505 7.07362 11.2857 7.25554 11.1081C7.43746 10.9304 7.66061 10.8415 7.92534 10.8415C8.18585 10.8415 8.40511 10.9304 8.58311 11.1081C8.7608 11.2857 8.84995 11.505 8.84995 11.7655C8.84962 12.055 8.75654 12.2824 8.57044 12.4477ZM10.8873 6.70377C10.7446 6.9685 10.575 7.19677 10.3784 7.38925C10.1823 7.58169 9.82965 7.90515 9.32064 8.35991C9.18029 8.48822 9.06736 8.60085 8.98274 8.69782C8.89811 8.79511 8.83487 8.88392 8.79359 8.96466C8.75202 9.04535 8.72012 9.12609 8.69752 9.20678C8.67492 9.28718 8.64091 9.42905 8.59482 9.63172C8.51653 10.0618 8.27047 10.2768 7.85695 10.2768C7.6419 10.2768 7.46121 10.2066 7.31393 10.066C7.16724 9.92535 7.09407 9.71664 7.09407 9.43958C7.09407 9.09233 7.14798 8.79144 7.2555 8.53698C7.36243 8.28248 7.50548 8.05932 7.68318 7.86687C7.86117 7.67443 8.10089 7.44612 8.40297 7.1814C8.66769 6.94979 8.85895 6.77513 8.9767 6.65735C9.09474 6.5393 9.19385 6.40799 9.27425 6.26342C9.35529 6.11855 9.39504 5.96164 9.39504 5.7921C9.39504 5.46112 9.27248 5.18224 9.02612 4.95486C8.78007 4.72748 8.46262 4.61362 8.07381 4.61362C7.61875 4.61362 7.28384 4.72836 7.0688 4.95786C6.85376 5.18735 6.67217 5.52526 6.52308 5.97191C6.38213 6.43934 6.11529 6.67302 5.72285 6.67302C5.49124 6.67302 5.2958 6.5914 5.13648 6.42815C4.97746 6.2649 4.89795 6.08813 4.89795 5.8978C4.89795 5.50506 5.02414 5.10691 5.27624 4.70365C5.52863 4.30039 5.89666 3.96638 6.38061 3.70194C6.86428 3.43721 7.42901 3.30468 8.07381 3.30468C8.67344 3.30468 9.2026 3.4155 9.66159 3.63688C10.1206 3.85793 10.4753 4.15882 10.7256 4.53948C10.9756 4.91984 11.1009 5.33337 11.1009 5.78002C11.1015 6.13093 11.0301 6.43904 10.8873 6.70377Z" fill="currentColor"/>
+        </symbol>
+        <symbol id="ic-facebook" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2.66684C16 1.2656 14.7349 0 13.3333 0H2.66667C1.26507 0 0 1.2656 0 2.66684V13.3332C0 14.7344 1.26507 16 2.66684 16H8V9.95556H6.04444V7.28889H8V6.24996C8 4.45813 9.34542 2.84444 11 2.84444H13.1556V5.51111H11C10.7641 5.51111 10.4889 5.79751 10.4889 6.22649V7.28889H13.1556V9.95556H10.4889V16H13.3333C14.7349 16 16 14.7344 16 13.3332V2.66684Z" fill="currentColor"/>
+        </symbol>
+        <symbol id="ic-twitter" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 1.89305C19.2639 2.21429 18.4741 2.43216 17.6442 2.52942C18.4915 2.02968 19.1402 1.23702 19.4476 0.295398C18.6527 0.758193 17.7754 1.09424 16.8406 1.27641C16.092 0.489895 15.0271 6.08978e-08 13.8461 6.08978e-08C11.5803 6.08978e-08 9.74312 1.80937 9.74312 4.03969C9.74312 4.35601 9.77936 4.66496 9.84936 4.96039C6.44001 4.79174 3.41684 3.18301 1.39347 0.738495C1.03977 1.33425 0.838563 2.02842 0.838563 2.76943C0.838563 4.1714 1.56343 5.40841 2.66324 6.13213C1.99085 6.10999 1.35847 5.92782 0.804838 5.62502V5.67549C0.804838 7.63256 2.21958 9.2659 4.09546 9.63764C3.75177 9.72873 3.38935 9.7792 3.01442 9.7792C2.74948 9.7792 2.49327 9.75335 2.24206 9.70411C2.76445 11.3104 4.27919 12.4785 6.07387 12.5105C4.67037 13.5937 2.90069 14.2374 0.978564 14.2374C0.647387 14.2374 0.321177 14.2177 0 14.182C1.81592 15.3304 3.97177 16 6.28883 16C13.8362 16 17.9617 9.84321 17.9617 4.50374L17.9479 3.98063C18.754 3.41439 19.4513 2.70297 20 1.89305Z" fill="currentColor"/>
+        </symbol>
+        <symbol id="ic-youtube" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.98 1.54182C22.329 0.418909 21.6225 0.212364 20.184 0.133818C18.747 0.0392727 15.1335 0 12.003 0C8.8665 0 5.2515 0.0392728 3.816 0.132364C2.3805 0.212364 1.6725 0.417454 1.0155 1.54182C0.345 2.66327 0 4.59491 0 7.99564C0 7.99855 0 8 0 8C0 8.00291 0 8.00436 0 8.00436V8.00727C0 11.3935 0.345 13.3396 1.0155 14.4495C1.6725 15.5724 2.379 15.776 3.8145 15.8705C5.2515 15.952 8.8665 16 12.003 16C15.1335 16 18.747 15.952 20.1855 15.872C21.624 15.7775 22.3305 15.5738 22.9815 14.4509C23.658 13.3411 24 11.3949 24 8.00873C24 8.00873 24 8.00436 24 8.00146C24 8.00146 24 7.99855 24 7.99709C24 4.59491 23.658 2.66327 22.98 1.54182ZM9 12.3636V3.63636L16.5 8L9 12.3636Z" fill="currentColor"/>
+        </symbol>
+    </svg>
+    <aside class="c-aside c-aside--nav js-menu-mob">
+        <div class="l-wrapper l-wrapper--nav">
+            <div class="l-container l-container--aside">
+                <header class="c-header c-header--nav">
+                <a href="#" class="o-logo">
+                    <svg class="o-logo__icon"><use xlink:href="#ic-logo"/></svg>
+                </a>
+                </header>
+                <div class="c-aside__main">
+                    <menu class="c-menu">
+                        <li class="c-menu__item c-menu__item_active">
+                            <a href="/" class="c-menu__item-link">
+                                <svg class="c-menu__item-ic"><use xlink:href="#ic-media"/></svg> <span>MEDIA</span>
+                            </a>
+                        </li>
+                        <li class="c-menu__item">
+                            <a href="#" class="c-menu__item-link">
+                                <svg class="c-menu__item-ic"><use xlink:href="#ic-target"/></svg> <span>Royal Battle</span>
+                            </a>
+                        </li>
+                        <li class="c-menu__item">
+                            <a href="#" class="c-menu__item-link">
+                                <svg class="c-menu__item-ic"><use xlink:href="#ic-controller"/></svg> <span>Tournaments</span>
+                            </a>
+                        </li>
+                        <li class="c-menu__item">
+                            <a href="#" class="c-menu__item-link">
+                                <svg class="c-menu__item-ic"><use xlink:href="#ic-reload"/></svg> <span>Skill exchange</span>
+                            </a>
+                        </li>
+                    </menu>
+                </div>
+                <footer class="c-footer">
+                    <ul>
+                        <li><a href="#" class="c-footer__link">Contact Us</a></li>
+                        <li><a href="#" class="c-footer__link">Jobs</a></li>
+                        <li><a href="#" class="c-footer__link">Terms and condition</a></li>
+                        <li><a href="#" class="c-footer__link">Privacy Policy</a></li>
+                        <li><a href="#" class="c-footer__link">User agreement</a></li>
+                        <li>
+                            <a href="#" class="c-footer__link c-footer__link--feedback">
+                                <svg class="ic-question"><use xlink:href="#ic-question"/></svg> Feedback? YES!
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="c-footer__social">
+                        <a href="#"><svg class="c-footer__social-ic"><use xlink:href="#ic-twitter"/></svg></a>
+                        <a href="#"><svg class="c-footer__social-ic"><use xlink:href="#ic-youtube"/></svg></a>
+                        <a href="#"><svg class="c-footer__social-ic"><use xlink:href="#ic-facebook"/></svg></a>
+                    </div>
+                    <p>2011-2018 © WePlay LTD. All right reserved.</p>
+                </footer>
+            </div>
+        </div>
+    </aside>
+
+    <div class="c-header c-header--mob">
+        <button type="button" class="c-header-menu-toggle js-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a href="#" class="o-logo">
+            <svg class="o-logo__icon"><use xlink:href="#ic-logo"/></svg>
+        </a>
+        <button type="button" class="o-btn c-header__btn js-login-btn-mob"><span>Sign in</span></button>
+    </div>
+
+    <div class="o-overlay js-overlay"></div>
+
+    <main class="c-main">
+        <header class="c-header">
+            <div class="l-container l-container--head">
+                <h1 class="o-title o-title--main">Media</h1>
+                <div class="c-lang-select">
+                    <select name="" id="">
+                        <option value="en">En</option>
+                        <option value="en">Ua</option>
+                        <option value="en">Ru</option>
+                        <option value="en">De</option>
+                    </select>
+                </div>
+                <button type="button" class="o-btn c-header__btn js-login-btn"><span>Sign in</span></button>
+            </div>
+        </header>
+        <div class="l-container l-container--main">
+            <div class="c-main__top">
+                <div class="c-news">
+                    <div class="c-news-block c-news-block--lg">
+                        <div class="c-news-block__img">
+                            <img src="img/news1.jpg" alt="news-img">
+                        </div>
+                        <p class="c-news-block__tags">
+                            <a href="#" class="o-btn o-btn--tag o-btn--tag-lg"><span>Counter-Strike</span></a>
+                        </p>
+                        <a href="#" class="c-news-block__title">Structuring harmony before nationality: the validation of Hellraisers</a>
+                        <p class="c-news-block__text">Combine this with BCI, so that it will not only expand my content horizon faster than I can consume it, AND with content I WA NT!</p>
+                    </div>
+                    <div class="c-news-block">
+                        <div class="c-news-block__img">
+                            <img src="img/news2.jpg" alt="news-img">
+                        </div>
+                        <p class="c-news-block__tags">
+                            <a href="#" class="o-btn o-btn--tag"><span>Counter-Strike</span></a>
+                            <a href="#" class="o-btn o-btn--tag"><span>News</span></a>
+                        </p>
+                        <a href="#" class="c-news-block__title">Astralis topple Natus Vincere to win Dream Hack Masters Marseille 2018</a>
+                        <p class="c-news-block__text">Combine this with BCI, so that it will not only expand my content horizon faster than I can consume it, AND with content I WA NT!</p>
+                    </div>
+                    <div class="c-news-block">
+                        <div class="c-news-block__img">
+                            <img src="img/news3.jpg" alt="news-img">
+                        </div>
+                        <p class="c-news-block__tags">
+                            <a href="#" class="o-btn o-btn--tag"><span>Counter-Strike</span></a>
+                            <a href="#" class="o-btn o-btn--tag"><span>News</span></a>
+                        </p>
+                        <a href="#" class="c-news-block__title">OWL Daily: Battle for Los Angeles ends with a nail biting five game series</a>
+                        <p class="c-news-block__text">Game 1: Los Angeles Valiant vs Los Angeles Gladiators Valiant wins 3-2</p>
+                    </div>
+                </div>
+
+                <div class="c-latest">
+                    <h3 class="o-title o-title--lg o-title--latest">Latest</h3>
+                    <div class="c-latest__wrap">
+                        <div class="c-latest-block">
+                            <div class="c-latest-block__img">
+                                <img src="img/latest1.jpg" alt="latest-img">
+                            </div>
+                            <div class="c-latest-block__inner">
+                                <p class="c-latest-block__date">14:58</p>
+                                <a href="#" class="c-latest-block__title">Astralis topple Natus Vincere to win Dream Hack Masters Marseille 2018</a>
+                            </div>
+                        </div>
+                        <div class="c-latest-block">
+                            <div class="c-latest-block__img">
+                                <img src="img/latest2.jpg" alt="latest-img">
+                            </div>
+                            <div class="c-latest-block__inner">
+                                <p class="c-latest-block__date">13:25</p>
+                                <a href="#" class="c-latest-block__title">OWL Daily: Battle for Los Angeles ends with a nail biting five game series</a>
+                            </div>
+                        </div>
+                        <div class="c-latest-block">
+                            <div class="c-latest-block__img">
+                                <img src="img/latest3.jpg" alt="latest-img">
+                            </div>
+                            <div class="c-latest-block__inner">
+                                <p class="c-latest-block__date">12:13</p>
+                                <a href="#" class="c-latest-block__title">Big names bolster Birmingham 2018's final participants line-up</a>
+                            </div>
+                        </div>
+                        <div class="c-latest-block">
+                            <div class="c-latest-block__img">
+                                <img src="img/latest4.jpg" alt="latest-img">
+                            </div>
+                            <div class="c-latest-block__inner">
+                                <p class="c-latest-block__date">11:48</p>
+                                <a href="#" class="c-latest-block__title">Astralis topple Natus Vincere to win Dream Hack Masters Marseille 2018</a>
+                            </div>
+                        </div>
+                        <div class="c-latest-block">
+                            <div class="c-latest-block__img">
+                                <img src="img/latest1.jpg" alt="latest-img">
+                            </div>
+                            <div class="c-latest-block__inner">
+                                <p class="c-latest-block__date">11:12</p>
+                                <a href="#" class="c-latest-block__title">OWL Daily: Battle for Los Angeles ends with a nail biting five game series</a>
+                            </div>
+                        </div>
+                        <div class="c-latest-block">
+                            <div class="c-latest-block__img">
+                                <img src="img/latest2.jpg" alt="latest-img">
+                            </div>
+                            <div class="c-latest-block__inner">
+                                <p class="c-latest-block__date">10:36</p>
+                                <a href="#" class="c-latest-block__title">Life is Strange 2 has introduced the official</a>
+                            </div>
+                        </div>
+                        <div class="c-latest-block">
+                            <div class="c-latest-block__img">
+                                <img src="img/latest2.jpg" alt="latest-img">
+                            </div>
+                            <div class="c-latest-block__inner">
+                                <p class="c-latest-block__date">5.08</p>
+                                <a href="#" class="c-latest-block__title">Astralis topple Natus Vincere to win Dream Hack Masters Marseille 2018</a>
+                            </div>
+                        </div>
+                        <div class="c-latest-block">
+                            <div class="c-latest-block__img">
+                                <img src="img/latest3.jpg" alt="latest-img">
+                            </div>
+                            <div class="c-latest-block__inner">
+                                <p class="c-latest-block__date">5.08</p>
+                                <a href="#" class="c-latest-block__title">OWL Daily: Battle for Los Angeles ends with a nail biting five game series</a>
+                            </div>
+                        </div>
+                        <div class="c-latest-block">
+                            <div class="c-latest-block__img">
+                                <img src="img/latest4.jpg" alt="latest-img">
+                            </div>
+                            <div class="c-latest-block__inner">
+                                <p class="c-latest-block__date">5.08</p>
+                                <a href="#" class="c-latest-block__title">Artifact Beta will start in October</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="c-latest__link">View all news</a>
+                </div>
+            </div>
+
+            <div class="c-popular">
+                <h3 class="o-title o-title--lg c-popular__title">Popular</h3>
+                <div class="c-popular__wrap">
+                    <div class="c-news-block c-news-block--popular">
+                        <div class="c-news-block__img">
+                            <img src="img/popular1.jpg" alt="news-img">
+                        </div>
+                        <p class="c-news-block__tags">
+                            <a href="#" class="o-btn o-btn--tag"><span>Counter-Strike</span></a>
+                            <a href="#" class="o-btn o-btn--tag"><span>News</span></a>
+                        </p>
+                        <a href="#" class="c-news-block__title">Astralis topple Natus Vincere to win Dream Hack Masters Marseille 2018</a>
+                        <p class="c-news-block__text">Combine this with BCI, so that it will not only expand my content horizon faster than I can consume it, AND with content I WA NT!</p>
+                    </div>
+                    <div class="c-news-block c-news-block--popular">
+                        <div class="c-news-block__img">
+                            <img src="img/popular2.jpg" alt="news-img">
+                        </div>
+                        <p class="c-news-block__tags">
+                            <a href="#" class="o-btn o-btn--tag"><span>Overwatch</span></a>
+                            <a href="#" class="o-btn o-btn--tag"><span>News</span></a>
+                        </p>
+                        <a href="#" class="c-news-block__title">OWL Daily: Battle for Los Angeles ends with a nail biting five game series</a>
+                        <p class="c-news-block__text">Game 1: Los Angeles Valiant vs Los Angeles Gladiators Valiant wins 3-2</p>
+                    </div>
+                    <div class="c-news-block c-news-block--popular">
+                        <div class="c-news-block__img">
+                            <img src="img/popular3.jpg" alt="news-img">
+                        </div>
+                        <p class="c-news-block__tags">
+                            <a href="#" class="o-btn o-btn--tag"><span>Dota 2</span></a>
+                        </p>
+                        <a href="#" class="c-news-block__title">Big names bolster Birmingham 2018's final participants line-up</a>
+                        <p class="c-news-block__text">ESL One Birmingham 2018 is almost ready to hit the UK in May, having finalized its 12-team line-up </p>
+                    </div>
+                    <div class="c-news-block c-news-block--popular">
+                            <div class="c-news-block__img">
+                                <img src="img/popular4.jpg" alt="news-img">
+                            </div>
+                            <p class="c-news-block__tags">
+                                <a href="#" class="o-btn o-btn--tag"><span>Counter-Strike</span></a>
+                                <a href="#" class="o-btn o-btn--tag"><span>News</span></a>
+                            </p>
+                            <a href="#" class="c-news-block__title">Astralis topple Natus Vincere to win Dream Hack Masters Marseille 2018</a>
+                            <p class="c-news-block__text">Combine this with BCI, so that it will not only expand my content horizon faster than I can consume it, AND with content I WA NT!</p>
+                    </div>
+                    <div class="c-news-block c-news-block--popular">
+                        <div class="c-news-block__img">
+                            <img src="img/popular5.jpg" alt="news-img">
+                        </div>
+                        <p class="c-news-block__tags">
+                            <a href="#" class="o-btn o-btn--tag"><span>Overwatch</span></a>
+                            <a href="#" class="o-btn o-btn--tag"><span>News</span></a>
+                        </p>
+                        <a href="#" class="c-news-block__title">OWL Daily: Battle for Los Angeles ends with a nail biting five game series</a>
+                        <p class="c-news-block__text">Game 1: Los Angeles Valiant vs Los Angeles Gladiators Valiant wins 3-2</p>
+                    </div>
+                    <div class="c-news-block c-news-block--popular">
+                        <div class="c-news-block__img">
+                            <img src="img/popular6.jpg" alt="news-img">
+                        </div>
+                        <p class="c-news-block__tags">
+                            <a href="#" class="o-btn o-btn--tag"><span>Dota 2</span></a>
+                        </p>
+                        <a href="#" class="c-news-block__title">Big names bolster Birmingham 2018's final participants line-up</a>
+                        <p class="c-news-block__text">ESL One Birmingham 2018 is almost ready to hit the UK in May, having finalized its 12-team line-up </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <aside class="c-aside c-aside--live">
+        <header class="c-header c-header--live">
+            <h3 class="o-title o-title--live">Live comments</h3>
+        </header>
+        <div class="l-wrapper l-wrapper--live">
+            <div class="c-comment__wrap">
+                <div class="c-comment">
+                    <div class="c-comment__img">
+                        <img src="img/avatar logo.png" alt="user-avatar">
+                    </div>
+                    <h4 class="o-title c-comment__title">MadeInTerror88588588588</h4>
+                    <p class="c-comment__date">just now</p>
+                    <p class="c-comment__text">Seriously, if the user has been shadowbanned, then why even show notification...</p>
+                    <a href="#" class="c-comment__link">It really do be like that sometimes</a>
+                </div>
+                <div class="c-comment">
+                    <div class="c-comment__img">
+                        <img src="img/24.png" alt="user-avatar">
+                    </div>
+                    <h4 class="o-title c-comment__title">TheGreenJellyfishie</h4>
+                    <p class="c-comment__date">3 min ago</p>
+                    <p class="c-comment__text">Humans are okay sometimes.</p>
+                    <a href="#" class="c-comment__link">Supporters of rival teams come face to face in the streets of Naples, and it is a bloodbath</a>
+                </div>
+                <div class="c-comment">
+                    <div class="c-comment__img">
+                        <img src="img/24-1.png" alt="user-avatar">
+                    </div>
+                    <h4 class="o-title c-comment__title">whoopdeefuckingdo</h4>
+                    <p class="c-comment__date">4 min ago</p>
+                    <p class="c-comment__text">The thought of Napoli and Juve fans getting along made me smile too.</p>
+                    <a href="#" class="c-comment__link">Supporters of rival teams come face to face in the streets of Naples, and it is a bloodbath</a>
+                </div>
+                <div class="c-comment">
+                    <div class="c-comment__img">
+                        <img src="img/24-2.png" alt="user-avatar">
+                    </div>
+                    <h4 class="o-title c-comment__title">UnderlyingTissues</h4>
+                    <p class="c-comment__date">10 min ago</p>
+                    <p class="c-comment__text">I'm thinking hair butcher.</p>
+                    <a href="#" class="c-comment__link">What my sister asked</a>
+                </div>
+                <div class="c-comment">
+                    <div class="c-comment__img">
+                        <img src="img/24-3.png" alt="user-avatar">
+                    </div>
+                    <h4 class="o-title c-comment__title">Aesop_Rocks</h4>
+                    <p class="c-comment__date">11 min ago</p>
+                    <p class="c-comment__text">Ah, I see you're paying attention ;)</p>
+                    <a href="#" class="c-comment__link">It really do be like that sometimes</a>
+                </div>
+                <div class="c-comment">
+                    <div class="c-comment__img">
+                        <img src="img/avatar logo.png" alt="user-avatar">
+                    </div>
+                    <h4 class="o-title c-comment__title">MadeInTerror88588588588</h4>
+                    <p class="c-comment__date">just now</p>
+                    <p class="c-comment__text">Seriously, if the user has been shadowbanned, then why even show notification...</p>
+                    <a href="#" class="c-comment__link">It really do be like that sometimes</a>
+                </div>
+                <div class="c-comment">
+                    <div class="c-comment__img">
+                        <img src="img/avatar logo.png" alt="user-avatar">
+                    </div>
+                    <h4 class="o-title c-comment__title">MadeInTerror88588588588</h4>
+                    <p class="c-comment__date">just now</p>
+                    <p class="c-comment__text">Seriously, if the user has been shadowbanned, then why even show notification...</p>
+                    <a href="#" class="c-comment__link">It really do be like that sometimes</a>
+                </div>
+                <div class="c-comment">
+                    <div class="c-comment__img">
+                        <img src="img/avatar logo.png" alt="user-avatar">
+                    </div>
+                    <h4 class="o-title c-comment__title">MadeInTerror88588588588</h4>
+                    <p class="c-comment__date">just now</p>
+                    <p class="c-comment__text">Seriously, if the user has been shadowbanned, then why even show notification...</p>
+                    <a href="#" class="c-comment__link">It really do be like that sometimes</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="c-popup js-popup">
+        <button type="button" class="o-btn o-btn--close c-popup__close js-popup-close"></button>
+        <h4 class="c-popup__title">Sign in</h4>
+        <form class="c-login__form" action="">
+            <label for="" class="o-input__wrap">
+                <p class="o-input__title">Email</p>
+                <input class="o-input" type="email" placeholder="example@gmail.com" required>
+                <span class="o-input__error">Email is invalid</span>
+            </label>
+            <label for="" class="o-input__wrap">
+                <p class="o-input__title">Password</p>
+                <input class="o-input" type="password" placeholder="Password" required>
+                <span class="o-input__error">Password is invalid</span>
+            </label>
+            <label class="c-form__check">
+                <input type="checkbox" name="" id="">
+                <span class="c-form__check-text">Remember me</span>
+            </label>
+            <button class="o-btn c-popup__btn" type="submit"><span>Sign In</span></button>
+            <p class="c-popup__link">
+                <a href="#" class="o-link o-link--sm">Forgot Password?</a>
+            </p>
+        </form>
+    </div>
+
+    <div class="c-cookie">
+        <p class="c-cookie__text">This website uses cookies for analyisis, personalised content and advertisement. By using this website, you accept our <a href="/" class="c-cookie__link">Terms of Service</a></p>
+        <button type="button" class="o-btn o-btn--close c-cookie__close js-coockieMsg-close"></button>
+    </div>
+</body>
+</html>

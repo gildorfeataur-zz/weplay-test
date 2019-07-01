@@ -1,0 +1,145 @@
+.c-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 76px;
+  width: 100%;
+  background-color: rgba(37, 49, 63, 0.7);
+  border-bottom: 1px solid $color5;
+  z-index: 2;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-grow: 1;
+
+    @include phones {
+      justify-content: center;
+    }
+  }
+
+  &__logo {
+    display: inline-flex;
+
+    img {
+      width: 31px;
+      height: 30px;
+      max-width: 31px;
+    }
+  }
+
+  &__menu {
+    position: relative;
+    height: 100%;
+    z-index: 10;
+
+    &-btn {
+      display: inline-flex;
+      align-items: center;
+      color: $color2;
+      margin: 0 10px;
+      padding: 0;
+      height: 100%;
+      background: transparent;
+      outline: 0;
+      border: 0;
+      cursor: pointer;
+
+      &:hover {
+        .ic-menu {
+          transform: scale(1.2);
+          transition: $transition-menu;
+
+          @include tablets {
+            transform: none;
+          }
+        }
+      }
+    }
+
+    @include phones {
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  &__search {
+    color: $color2;
+  }
+
+  &__btn {
+    margin-right: 20px;
+    color: $color6;
+    transition: all 200ms linear;
+    &:hover {
+      color: $color2;
+    }
+    &-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 20px;
+
+      @include phones {
+        display: none;
+      }
+    }
+
+    .o-button__text {
+      line-height: 1;
+    }
+  }
+
+  &__login {
+    &-link {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      &:hover {
+        color: $color2;
+        transition: $transition-default;
+      }
+    }
+  }
+
+  &__user {
+
+    &-btn {
+      color: $color2;
+      background: transparent;
+      outline: 0;
+      border: 0;
+      cursor: pointer;
+      margin: 0 4%;
+      &-wrap {
+        width: 100%;
+        display: none;
+        justify-content: center;
+        color: $color2;
+        padding: 0 10px 0 0;
+
+        @include tablets {
+          display: none;
+        }
+      }
+    }
+
+    .c-user__level {
+      background: url("../images/bg-avatar_hex.svg") no-repeat;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  @include  phones {
+    height: 62px;
+  }
+
+}

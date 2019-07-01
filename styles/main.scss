@@ -1,0 +1,1061 @@
+@import "reset";
+@import "variables";
+@import "fonts";
+@import "mixin";
+@import "extend";
+
+html {
+  -webkit-text-size-adjust: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  @include font-use($fs3, 400);
+  background-color: $white;
+  color: $color1;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: auto;
+
+  @extend %custom-scrollbar;
+
+  &.is-overflow {
+    overflow: hidden;
+  }
+}
+
+a {
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    transition: $transition-default;
+  }
+}
+
+ul,
+div,
+section {
+  @extend %custom-scrollbar;
+}
+
+// HTML-Objects
+.o-logo {
+  &__icon {
+    width: 110px;
+    height: 32px;
+  }
+
+  @include phones-landscape {
+    margin: auto;
+  }
+}
+
+.o-title {
+  position: relative;
+  @include font-use($fs4,500);
+
+  &--lg {
+    @include font-use($fs6,700);
+    margin-bottom: 32px;
+  }
+
+  &--main {
+    @include font-use($fs7,700);
+    margin: auto auto auto 0;
+  }
+
+  &--live {
+    padding-left: 32px;
+
+    &::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      @include absolute(0,auto,0,0);
+      background: rgba(255, 25, 103, 0.24);
+      border-radius: $br-1;
+    }
+    &::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      @include absolute(0,auto,0,4px);
+      background: $color3;
+      border-radius: $br-1;
+    }
+  }
+
+  &--latest {
+    color: $color2;
+  }
+}
+
+.o-input {
+  @include font-use($fs4,400);
+  background: 0;
+  outline: 0;
+  border: 0;
+  border: 1px solid $color5;
+  color: $color4;
+  width: 100%;
+  height: 40px;
+  border-radius: $br-2;
+  padding: 0 16px;
+  box-sizing: border-box;
+
+  &:focus {
+    border: 1px solid $color2;
+    transition: $transition-default;
+  }
+
+  &__error {
+    display: none;
+    @include absolute(auto,auto,-18px,0);
+    font-size: $fs1;
+    color: red;
+  }
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    &.is-error {
+      .o-input {
+        border: 1px solid red;
+        color: red;
+
+        &__error {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: $fs4;
+    color: $color1;
+    margin-bottom: 6px;
+  }
+}
+
+.o-btn {
+  display: inline-flex;
+  outline: 0;
+  border: 0;
+  border-radius: $br-1;
+  cursor: pointer;
+  color: $white;
+  background: transparent;
+  height: 40px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+
+  span {
+    margin: auto;
+    @include font-use($fs3,700);
+  }
+
+  &:hover {
+    color: $color3;
+    border-color: $color3;
+    transition: $transition-default;
+  }
+
+  &--tag {
+    min-width: auto;
+    height: 24px;
+    border: 1px solid $color3;
+    color: $color3;
+    padding: 0 20px;
+    margin-right: 8px;
+
+    span {
+      @include font-use($fs1,500);
+    }
+
+    &:hover {
+      border: 1px solid $color1;
+      color: $color1;
+    }
+  }
+
+  &--close {
+    position: relative;
+    min-width: 16px;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    color: $color1;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 16px;
+      height: 1px;
+      @include absolute();
+      background: currentColor;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.o-link {
+  color: $color2;
+  font-weight: 500;
+
+  &:hover {
+    color: $color3;
+  }
+
+  &--sm {
+    font-size: $fs2;
+  }
+}
+
+.o-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  background: rgba($color: $black, $alpha: .7);
+
+  @include phones-landscape {
+    top: $header-height-mob;
+    z-index: 5;
+  }
+
+  &.is-active {
+    display: block;
+    overflow: hidden;
+  }
+}
+
+// LAYOUTS
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+
+  &--nav {
+    padding: 0 40px 0 17px;
+    height: 100%;
+
+    @include desktops {
+      padding: 0 $block-padding;
+    }
+  }
+
+  &--live {
+    padding: 0 32px;
+
+    @include desktops {
+      padding: 0 $block-padding;
+    }
+  }
+
+  &--title {
+    padding: 0 $block-padding;
+  }
+}
+
+.l-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+
+  &--head {
+    display: flex;
+    align-items: center;
+    padding: 0 $block-padding;
+    max-width: $main-width;
+  }
+
+  &--main {
+    max-width: $main-width;
+    padding: 0 8px;
+
+    @include phones-landscape {
+      max-width: 100%;
+      padding: 0;
+    }
+  }
+
+  &--aside {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+// COMPONENTS
+.c-menu {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    width: 100%;
+    height: 32px;
+    margin-bottom: 34px;
+    position: relative;
+
+    &-ic {
+      display: inline-block;
+      width: 22px;
+      height: 20px;
+      margin-right: 16px;
+    }
+
+    &-link {
+      display: flex;
+      width: 100%;
+      color: $white;
+      align-items: center;
+      font-size: $fs4;
+
+      &:hover {
+        color: $color2;
+      }
+    }
+
+    &_active {
+      .c-menu__item-link {
+        color: $color2;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 32px;
+        @include absolute(0,auto,0,-17px);
+        background: $color3;
+      }
+    }
+  }
+}
+
+.c-header {
+  width: 100%;
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-shrink: 0;
+  border-bottom: 1px solid $color5;
+  box-sizing: border-box;
+
+  &--nav {
+    border-bottom: 0;
+  }
+
+  &--live {
+    padding: 0 32px;
+  }
+
+  @include phones-landscape {
+    display: none;
+  }
+
+  &--mob {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    height: $header-height-mob;
+    background: $color1;
+    border-bottom: 0;
+    z-index: 10;
+    box-sizing: border-box;
+
+    @include phones-landscape {
+      display: flex;
+    }
+  }
+
+  &-menu-toggle {
+    @include absolute(0,auto,0,8px);
+    width: 25px;
+    height: 19px;
+    display: none;
+    background: none;
+    border: 0;
+    outline: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: $white;
+
+    span {
+      display: inline-block;
+      height: 2px;
+      width: 25px;
+      border-radius: $br-2;
+      background: currentColor;
+
+      &:nth-child(2) {
+        display: inline-block;
+        margin: 6px 0;
+      }
+    }
+
+    &.is-active {
+      color: $color4;
+
+      span {
+        transition: $transition-menu;
+        width: 28px;
+        height: 2px;
+        @include absolute();
+
+        &:nth-child(1) {
+          transform: rotate(-45grad);
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+        &:nth-child(3) {
+          transform: rotate(45grad);
+        }
+      }
+    }
+
+    @include tablets {
+      display: inline-flex;
+    }
+  }
+
+  &__btn {
+    border: 2px solid $color2;
+    color: $color2;
+    min-width: 160px;
+
+    @include phones-landscape {
+      @include absolute(0,8px,0,auto);
+      border-color: $white;
+      color: $white;
+      padding: 0 10px;
+      min-width: 64px;
+      font-weight: 500;
+    }
+  }
+}
+
+.c-aside {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  flex-shrink: 0;
+
+  &__main {
+    flex-grow: 1;
+
+    @include phones-landscape {
+      padding-top: 32px;
+    }
+  }
+
+  &--nav {
+    top: 0;
+    left: 0;
+    max-width: $nav-width;
+    background: $color1;
+    z-index: 11;
+
+    @include desktops {
+      max-width: $nav-width-tablet;
+    }
+
+    @include phones-landscape {
+      left: -$nav-width-tablet;
+      top: $header-height-mob;
+      transition: $transition-menu;
+      height: calc(100% - #{$header-height-mob});
+    }
+
+    &.is-open {
+      left: 0;
+    }
+  }
+
+  &--live {
+    top: 0;
+    right: 0;
+    font-size: $fs4;
+    width: $live-width;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
+    overflow-y: hidden;
+
+    @include desktops {
+      width: $live-width-tablet;
+    }
+
+    @include tablets {
+      display: none;
+    }
+  }
+}
+
+.c-footer {
+  padding: 30px 0 12px;
+  flex-shrink: 0;
+  color: $color4;
+
+  li {
+    height: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    color: $color4;
+    font-size: $fs2;
+
+    &:hover {
+      color: $color2;
+    }
+
+    &--feedback {
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: $white;
+
+      .ic-question {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &__social {
+    margin: 24px 0;
+
+    &-ic {
+      display: inline-block;
+      width: 24px;
+      height: 16px;
+    }
+
+    a {
+      display: inline-flex;
+      margin-right: 20px;
+      align-items: center;
+
+      &:hover {
+        color: $color2;
+      }
+    }
+  }
+}
+
+.c-main {
+  position: relative;
+  width: calc(100% - #{$nav-width} - #{$live-width});
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 0 $nav-width;
+
+  &__top {
+    display: flex;
+
+    @include phones-landscape {
+      flex-direction: column;
+      margin-bottom: 32px;
+    }
+  }
+
+  @include desktops {
+    width: calc(100% - #{$nav-width-tablet} - #{$live-width-tablet});
+    margin: 0 auto 0 $nav-width-tablet;
+  }
+
+  @include tablets {
+    width: calc(100% - #{$nav-width-tablet});
+    margin: 0 auto 0 $nav-width-tablet;
+  }
+
+  @include phones-landscape {
+    width: 100%;
+    margin: 0;
+    padding-top: $header-height-mob + 26px;
+  }
+}
+
+.c-comment {
+  position: relative;
+  margin-bottom: 22px;
+  padding-left: 56px;
+
+  &__img {
+    width: 40px;
+    height: 40px;
+    border-radius: $br-1;
+    @include absolute(0,auto,auto,0);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+  }
+
+  &__date {
+    color: $color4;
+    font-size: $fs2;
+  }
+
+  &__text {
+    margin-top: 8px;
+  }
+
+  &__link {
+    display: block;
+    margin-top: 6px;
+    color: $color2;
+
+    &:hover {
+      color: $color4;
+    }
+  }
+
+  @include desktops {
+    font-size: $fs3;
+    padding-left: 50px;
+  }
+}
+
+.c-lang-select {
+  position: relative;
+  margin-right: 32px;
+
+  select {
+    @include font-use($fs4,400);
+    position: relative;
+    top: 6px;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    color: $color4;
+    padding-bottom: 6px;
+  }
+}
+
+.c-news {
+  width: 67%;
+  display: flex;
+  flex-wrap: wrap;
+
+  &-block {
+    position: relative;
+    display: block;
+    width: 50%;
+    padding: 0 $block-padding 30px;
+    box-sizing: border-box;
+
+    @include desktops {
+      width: 100%;
+    }
+
+    @include phones-landscape {
+      padding: 0 $block-padding-mob 30px;
+    }
+
+    &__img {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      border-radius: $br-2;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__tags {
+      margin: 15px 0 12px;
+    }
+
+    &__title {
+      display: block;
+      @include font-use($fs4,500,$font-base,1.6);
+      margin-bottom: 8px;
+
+      &:hover {
+        color: $color2;
+      }
+    }
+
+    &__text {
+      @include font-use($fs3,400,$font-base,1.6);
+      color: $color4;
+      display: block;
+      max-width: 100%;
+      height: $fs3*1.6*3; /* Fallback for non-webkit */
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &--lg {
+      @media (min-width: 767px) { //for default block-view on mobiles
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        max-width: 100%;
+        height: 415px;
+        margin: 0 $block-padding 30px;
+        padding: 14px;
+        box-sizing: border-box;
+        border-radius: $br-2;
+
+        @include desktops {
+          height: 340px;
+        }
+
+        @include phones-landscape {
+          height: 300px;
+          margin: 0 $block-padding-mob 30px;
+          padding: 8px;
+        }
+
+        .c-news-block__img {
+          height: 100%;
+          @include absolute();
+          z-index: -1;
+          filter: brightness(70%);
+        }
+
+        .c-news-block__title {
+          @include font-use($fs6,700,$font-base,40px);
+          color: $white;
+          text-align: center;
+          margin: 0 auto 80px;
+
+          &:hover {
+            color: $color2;
+          }
+
+          @include desktops {
+            margin: 0 auto 20px;
+            @include font-use($fs5,500,$font-base);
+          }
+        }
+
+        .c-news-block__tags {
+          text-align: center;
+          margin: auto auto 16px;
+        }
+
+        .o-btn--tag {
+          height: 32px;
+          color: $white;
+          border: 1px solid $white;
+
+          span {
+            @include font-use($fs3,500);
+          }
+
+          &:hover {
+            border: 1px solid $color2;
+            color: $color2;
+          }
+        }
+
+        .c-news-block__text {
+          display: none;
+        }
+      }
+    }
+
+    &--popular {
+      width: 33.33%;
+
+      @include desktops {
+        width: 50%;
+      }
+
+      @include phones-landscape {
+        width: 100%;
+      }
+    }
+  }
+
+  @include phones-landscape {
+    width: auto;
+  }
+}
+
+.c-latest {
+  width: 30%;
+  padding: 0 $block-padding;
+
+  &-block {
+    display: flex;
+    margin-bottom: 32px;
+
+    &__img {
+      display: none;
+      width: 56px;
+      height: 56px;
+      border-radius: $br-2;
+      overflow: hidden;
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      @include phones-landscape {
+        display: inline-block;
+      }
+    }
+
+    &__date {
+      font-size: $fs1;
+      color: $color4;
+      padding-top: 4px;
+
+      @include phones-landscape {
+        margin-left: 15px;
+        padding-top: 0;
+      }
+    }
+
+    &__title {
+      @include font-use($fs4,500);
+      margin-left: 15px;
+
+      &:hover {
+        color: $color2;
+      }
+    }
+
+    &__inner {
+      display: flex;
+
+      @include phones-landscape {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    @include font-use($fs4,500);
+    color: $color2;
+    margin-top: 50px;
+
+    &:hover {
+      color: $color3;
+    }
+
+    @include phones-landscape {
+      margin: 20px 0 32px;
+    }
+  }
+
+  @include phones-landscape {
+    width: auto;
+    border-bottom: 1px solid $color5;
+    margin: 0 24px;
+    padding: 0;
+  }
+}
+
+.c-popular {
+  &__title {
+    padding: 0 $block-padding;
+
+    @include phones-landscape {
+      padding: 0 $block-padding-mob;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.c-cookie {
+  position: fixed;
+  left: $nav-width;
+  right: $live-width;
+  bottom: 0;
+  color: $color1;
+  font-size: $fs3;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.82);
+  justify-content: center;
+  padding: 12px 0;
+  box-sizing: border-box;
+
+  &__text {
+    padding: 0 60px 0 20px;
+  }
+
+  &__link {
+    color: $color2;
+    @include font-use($fs3,500);
+    margin-left: 6px;
+
+    &:hover {
+      color: $color3;
+    }
+  }
+
+  &__close {
+    color: $color4;
+    @include absolute(0,7%,0,auto);
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  @include desktops {
+    left: $nav-width-tablet;
+    right: $live-width-tablet;
+  }
+
+  @include tablets {
+    right: 0;
+  }
+
+  @include phones-landscape {
+    left: 0;
+    z-index: 13;
+  }
+
+  &.is-close {
+    display: none;
+  }
+}
+
+.c-popup {
+  @include absolute();
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 440px;
+  height: 420px;
+  background: $white;
+  border-radius: $br-2;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+  padding: 40px 24px;
+  color: $color1;
+  box-sizing: border-box;
+
+  &.is-open {
+    z-index: 16;
+    visibility: visible;
+    opacity: 1;
+    transition: all 200ms ease-in-out;
+  }
+
+  &__close {
+    @include absolute(16px,16px,auto,auto);
+  }
+
+  &__title {
+    @include font-use($fs5,500);
+    margin-bottom: 24px;
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    background: $color2;
+    min-width: 208px;
+  }
+
+  &__link {
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  @include phones-landscape {
+    width: 320px;
+  }
+}
+
+.c-form {
+  &__check {
+    display: flex;
+    align-items: center;
+    color: $color1;
+    margin: 20px 0;
+    cursor: pointer;
+
+    input[type=checkbox] {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      appearance: none;
+      border: 1px solid $color2;
+      background: $color5;
+      outline: 0;
+      margin-right: 6px;
+      border-radius: 2px;
+
+      &:checked {
+        background: transparent;
+
+        &::after {
+          content: '';
+          @include absolute();
+          width: 12px;
+          height: 12px;
+          background: $color2;
+        }
+      }
+    }
+
+    &-text {
+      display: inline-block;
+      position: relative;
+      bottom: -2px;
+    }
+  }
+}
